@@ -5,7 +5,7 @@ import Footer from "./Footer"
 const index = () => {
     return (
         <div>
-            <Footer />
+            {/* <Footer /> */}
         </div>
     )
 }

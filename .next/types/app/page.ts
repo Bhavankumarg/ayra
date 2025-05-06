@@ -1,4 +1,4 @@
-// File: /Users/kishorebarathrajgopal/Desktop/ayra-coming-soon/app/page.js
+// File: /Users/kishorebarathrajgopal/Desktop/ayra-new/app/page.js
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

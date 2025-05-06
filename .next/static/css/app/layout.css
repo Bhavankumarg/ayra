@@ -1027,9 +1027,6 @@ video {
 .p-2 {
   padding: 0.5rem;
 }
-.p-3 {
-  padding: 0.75rem;
-}
 .p-5 {
   padding: 1.25rem;
 }
@@ -1288,6 +1285,10 @@ body {
   font-weight: bold;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .hover\:bg-gray-200:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity, 1));
@@ -1403,8 +1404,8 @@ body {
     display: none;
   }
 
-  .lg\:h-16 {
-    height: 4rem;
+  .lg\:h-24 {
+    height: 6rem;
   }
 
   .lg\:h-\[45vh\] {
@@ -1473,7 +1474,4 @@ body {
     font-size: 18px;
   }
 }
-
-
-
 

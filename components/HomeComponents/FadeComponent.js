@@ -55,9 +55,7 @@ const FadeComponent = () => {
               A place where your education is an open canvas, your ambitions
               define your path, and your potential unfolds on your own terms.
             </p>
-            <div className="animate-bounce">
-              <HiChevronDown className="w-10 h-10 text-[#4EA6FF]" />
-            </div>
+            
           </div>
         </div>
       </div>
@@ -117,9 +115,7 @@ const FadeComponent = () => {
           </div>
         </div>
 
-        <div className=" animate-bounce mt-10">
-          <HiChevronDown className="w-10 h-10 text-[#4EA6FF]" />
-        </div>
+       
       </div>
 
       {/* SECTION 6 */}
