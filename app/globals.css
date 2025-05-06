@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "TT Hoves Pro";
+  src: url("/fonts/TT Hoves Pro Trial Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "TT Hoves Pro", sans-serif;
+}
+
+@font-face {
+  font-family: "tth-outline-trial";
+  src: url("/fonts/TT Hoves Pro Bold Outline Trial.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+.ttf-outline-trial-text {
+  font-family: "tth-outline-trial", sans-serif;
+  font-weight: bold;
+}
+
+
+
