@@ -55,7 +55,6 @@ const FadeComponent = ({ scrollToFooter }) => {
               A place where your education is an open canvas, your ambitions
               define your path, and your potential unfolds on your own terms.
             </p>
-            
           </div>
         </div>
       </div>
@@ -76,7 +75,7 @@ const FadeComponent = ({ scrollToFooter }) => {
 
       {/* SECTION 5 */}
 
-      <div className="bg-blue-950 lg:min-h-screen flex flex-col items-center justify-center text-center lg:py-24 py-10 px-4 lg:px-1 ">
+      <div className="bg-blue-950 lg:min-h-screen flex flex-col items-center justify-center text-center lg:py-24 py-10 px-4 lg:px-1 overflow-hidden">
         <div className="container mx-auto">
           <div className="flex items-center justify-center lg:h-full">
             <Image
@@ -88,39 +87,48 @@ const FadeComponent = ({ scrollToFooter }) => {
             />
           </div>
 
-          <div className="text-white lg:pt-20 pt-5">
-            <h2 className="text-3xl md:text-[48px] font-bold mb-8">
-              Future-Focused UG & PG Programs —
-            </h2>
-            <p className="text-xl md:text-[40px] font-thin tracking-wide">
-              A curriculum built to equip you with in-demand skills
-            </p>
-          </div>
-          <div className="text-white lg:pt-20 pt-5">
-            <h2 className="text-3xl md:text-[48px] font-bold mb-8">
-              A Campus Built for Innovation –
-            </h2>
-            <p className="text-xl md:text-[40px] font-thin tracking-wide">
-              Modern learning spaces designed for collaboration and creativity
-            </p>
-          </div>
-          <div className="text-white lg:pt-20 pt-5">
-            <h2 className="text-3xl md:text-[48px] font-bold mb-8">
-              Your Education, Your Way –
-            </h2>
-            <p className="text-xl md:text-[40px] font-thin tracking-wide">
-              Flexible, interdisciplinary learning paths tailored to your
-              ambitions
-            </p>
-          </div>
-        </div>
+          {/* Scrollable Content */}
+          <section className="h-[50vh] overflow-hidden">
+            <div className="h-full overflow-y-scroll snap-y snap-mandatory scroll-smooth">
+              {/* Slide 1 */}
+              <div className="text-white snap-start flex flex-col items-center justify-center h-[50vh]">
+                <h2 className="text-3xl md:text-[48px] font-bold mb-4">
+                  Future-Focused UG & PG Programs —
+                </h2>
+                <p className="text-xl md:text-[40px] font-thin tracking-wide text-center">
+                  A curriculum built to equip you with in-demand skills
+                </p>
+              </div>
 
-       
+              {/* Slide 2 */}
+              <div className="text-white snap-start flex flex-col items-center justify-center h-[50vh]">
+                <h2 className="text-3xl md:text-[48px] font-bold mb-4">
+                  A Campus Built for Innovation –
+                </h2>
+                <p className="text-xl md:text-[40px] font-thin tracking-wide text-center">
+                  Modern learning spaces designed for collaboration and
+                  creativity
+                </p>
+              </div>
+
+              {/* Slide 3 */}
+              <div className="text-white snap-start flex flex-col items-center justify-center h-[50vh]">
+                <h2 className="text-3xl md:text-[48px] font-bold mb-4">
+                  Your Education, Your Way –
+                </h2>
+                <p className="text-xl md:text-[40px] font-thin tracking-wide text-center">
+                  Flexible, interdisciplinary learning paths tailored to your
+                  ambitions
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
       </div>
 
       {/* SECTION 6 */}
 
-      <div className="relative w-full  bg-[#E2E2EB] overflow-hidden py-14">
+      <div className="relative w-full bg-[#E2E2EB] overflow-hidden py-14">
         <div className="flex items-center justify-center h-full container mx-auto">
           <Image
             src="/Home-imges/Home-text-04.png"
