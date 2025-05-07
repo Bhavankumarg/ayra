@@ -5,6 +5,7 @@ import { HiChevronDown } from "react-icons/hi"
 import FadeComponent from "@/components/HomeComponents/FadeComponent"
 import FormComponent from "@/components/HomeComponents/FormComponent"
 import Header from "@/components/shared/Header"
+import EnquiryForm2 from "@/components/HomeComponents/EnquiryForm2"
 
 const Page = () => {
   const footerRef = useRef(null)
@@ -18,8 +19,8 @@ const Page = () => {
       <Header scrollToFooter={scrollToFooter} />
 
       {/* SECTION 1 */}
-      <div className="relative lg:h-screen w-full bg-[#0052B8] overflow-hidden pt-10 lg:pt-5 ">
-        <div className="flex items-center justify-center h-full container mx-auto">
+      <div className="relative lg:h-screen w-full bg-[#0052B8] overflow-hidden pt-10 lg:pt-5">
+        <div className="flex items-center justify-center h-full container mx-auto animate-fadeIn">
           <Image
             src="/Home-imges/Home-text-01.png"
             alt="The Future of Learning is Unfolding"
@@ -44,7 +45,8 @@ const Page = () => {
 
       {/* Target Section */}
 
-      <FormComponent innerRef={footerRef} />
+      <EnquiryForm2 innerRef={footerRef} />
+      {/* <FormComponent innerRef={footerRef} /> */}
     </>
   )
 }
