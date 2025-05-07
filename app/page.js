@@ -7,15 +7,16 @@ import FormComponent from "@/components/HomeComponents/FormComponent"
 import Header from "@/components/shared/Header"
 
 const Page = () => {
-  const formRef = useRef(null)
+  const footerRef = useRef(null)
 
-  const handleScroll = () => {
-    formRef.current?.scrollIntoView({ behavior: "smooth" })
+  const scrollToFooter = () => {
+    footerRef.current?.scrollIntoView({ behavior: "smooth" })
   }
 
   return (
     <>
-      <Header handleScroll={handleScroll} />
+      <Header scrollToFooter={scrollToFooter} />
+
       {/* SECTION 1 */}
       <div className="relative lg:h-screen w-full bg-[#0052B8] overflow-hidden pt-10 lg:pt-5 ">
         <div className="flex items-center justify-center h-full container mx-auto">
@@ -33,7 +34,7 @@ const Page = () => {
           <div className="mb-5 animate-bounce">
             <HiChevronDown
               className="w-10 h-10 text-[#4EA6FF] cursor-pointer"
-              onClick={handleScroll}
+              onClick={scrollToFooter}
             />
           </div>
         </div>
@@ -42,9 +43,8 @@ const Page = () => {
       <FadeComponent />
 
       {/* Target Section */}
-      <div ref={formRef} id="contactForm">
-        <FormComponent />
-      </div>
+
+      <FormComponent innerRef={footerRef} />
     </>
   )
 }

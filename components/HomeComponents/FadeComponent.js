@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react"
 import { HiChevronDown } from "react-icons/hi"
 import Image from "next/image"
 
-const FadeComponent = () => {
+const FadeComponent = ({ scrollToFooter }) => {
   const messages = [
     "What does the perfect university feel like to you?",
     "What kind of learning experience are you looking for?",
@@ -28,7 +28,7 @@ const FadeComponent = () => {
   return (
     <>
       <div
-        className="flex items-center justify-center h-80 bg-white relative overflow-hidden bg-cover bg-center"
+        className="flex items-center justify-center lg:h-80 h-[200px] px-1 bg-white relative overflow-hidden bg-cover bg-center"
         style={{
           backgroundImage: "url('/Home-imges/bg-image-home.png')",
         }}
@@ -46,9 +46,9 @@ const FadeComponent = () => {
       {/* SECTION 3 */}
 
       <div className="w-full lg:h-[45vh] bg-[#0052B8] text-white flex items-center justify-center">
-        <div className="container mx-auto lg:px-6 px-4 py-5">
+        <div className="container mx-auto lg:px-6 px-4 py-8">
           <div className="flex flex-col items-center text-center space-y-5 ">
-            <p className="text-[24px] lg:text-[40px] font-thin leading-relaxed">
+            <p className="text-[24px] lg:text-[40px] font-thin leading-relaxed ">
               At AYRA, these answers aren't given to you—you create them.
             </p>
             <p className="text-[24px] lg:text-[40px] font-thin leading-relaxed">
@@ -76,7 +76,7 @@ const FadeComponent = () => {
 
       {/* SECTION 5 */}
 
-      <div className="bg-blue-950 lg:min-h-screen flex flex-col items-center justify-center text-center lg:py-14 px-4 lg:px-1 ">
+      <div className="bg-blue-950 lg:min-h-screen flex flex-col items-center justify-center text-center lg:py-24 py-10 px-4 lg:px-1 ">
         <div className="container mx-auto">
           <div className="flex items-center justify-center lg:h-full">
             <Image

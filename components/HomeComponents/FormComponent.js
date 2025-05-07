@@ -2,7 +2,7 @@
 import React, { useState } from "react"
 import axios from "axios"
 
-const EnquiryForm = () => {
+const EnquiryForm = ({ innerRef }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -86,7 +86,7 @@ const EnquiryForm = () => {
   }
 
   return (
-    <div className="container mx-auto px-4 py-12 relative">
+    <div ref={innerRef} className="container mx-auto px-4 py-12 relative">
       <h2 className="lg:text-[30px] text-[24px] font-bold mb-1 tracking-tight">
         Want to be the first to know?
       </h2>
@@ -125,7 +125,9 @@ const EnquiryForm = () => {
         ))}
 
         <div className="md:col-span-2 flex flex-col">
-          <label className="lg:text-[20px] text-gray-800 mb-1">Area of Interest</label>
+          <label className="lg:text-[20px] text-gray-800 mb-1">
+            Area of Interest
+          </label>
           <input
             type="text"
             name="interest"
