@@ -66,7 +66,7 @@ const SlidingContent = () => {
             <div key={index} className="text-white flex flex-col gap-20">
               {/* Text Block */}
               <div className="flex flex-col items-center justify-center">
-                <h2 className="text-3xl md:text-[48px] font-bold mb-8">
+                <h2 className="text-3xl md:text-[48px] font-bold mb-8 mt-3">
                   {slide.title}
                 </h2>
                 <p className="text-xl md:text-[40px] font-thin tracking-wide mb-10">
