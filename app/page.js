@@ -33,10 +33,7 @@ const Page = () => {
         {/* Scroll Arrow */}
         <div className="absolute inset-0 flex items-end justify-center">
           <div className="mb-5 animate-bounce">
-            <HiChevronDown
-              className="w-10 h-10 text-[#4EA6FF] cursor-pointer"
-          
-            />
+            <HiChevronDown className="w-10 h-10 text-[#4EA6FF] " />
           </div>
         </div>
       </div>

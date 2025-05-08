@@ -1167,10 +1167,6 @@ video {
 .text-\[24px\] {
   font-size: 24px;
 }
-.text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -1276,12 +1272,6 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-.text-\[\] {
-  color: ;
-}
-.text-\[14\] {
-  color: 14;
 }
 .antialiased {
   -webkit-font-smoothing: antialiased;
