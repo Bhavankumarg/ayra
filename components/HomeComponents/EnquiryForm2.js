@@ -1,13 +1,31 @@
 "use client"
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { ChevronDown, Check } from "lucide-react"
 import Image from "next/image"
 
 const CustomSelect = ({ label, options, onChange, value, error, innerRef }) => {
   const [isOpen, setIsOpen] = useState(false)
+  const dropdownRef = useRef(null)
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target)
+      ) {
+        setIsOpen(false)
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [])
 
   return (
-    <div className="relative w-full" ref={innerRef}>
+    <div ref={innerRef}>
+    <div className="relative w-full" ref={dropdownRef}>
       <label className="text-sm font-semibold mb-1 block">{label}</label>
       <button
         onClick={() => setIsOpen(!isOpen)}
@@ -48,7 +66,8 @@ const CustomSelect = ({ label, options, onChange, value, error, innerRef }) => {
         </ul>
       )}
       {error && <p className="text-red-600 text-sm mt-1">{error}</p>}
-    </div>
+      </div>
+       </div>
   )
 }
 

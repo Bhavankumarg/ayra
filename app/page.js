@@ -6,7 +6,7 @@ import FadeComponent from "@/components/HomeComponents/FadeComponent"
 import FormComponent from "@/components/HomeComponents/FormComponent"
 import Header from "@/components/shared/Header"
 import EnquiryForm2 from "@/components/HomeComponents/EnquiryForm2"
-
+import Footer from "@/components/shared/Footer/Footer"
 const Page = () => {
   const footerRef = useRef(null)
 
@@ -44,6 +44,7 @@ const Page = () => {
 
       <EnquiryForm2 innerRef={footerRef} />
       {/* <FormComponent innerRef={footerRef} /> */}
+      <Footer/>
     </>
   )
 }
