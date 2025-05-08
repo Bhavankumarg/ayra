@@ -22,7 +22,7 @@ const Page = () => {
       <div className="relative lg:h-screen w-full bg-[#172554] overflow-hidden pt-10 lg:pt-5">
         <div className="flex items-center justify-center h-full container mx-auto animate-fadeIn">
           <Image
-            src="/Home-imges/bg-ayar-image.png"
+            src="/Home-imges/ayrabg-img.png"
             alt="The Future of Learning is Unfolding"
             className="w-full h-[70vh] object-contain p-5"
             width={1384}
@@ -35,7 +35,7 @@ const Page = () => {
           <div className="mb-5 animate-bounce">
             <HiChevronDown
               className="w-10 h-10 text-[#4EA6FF] cursor-pointer"
-              onClick={scrollToFooter}
+          
             />
           </div>
         </div>

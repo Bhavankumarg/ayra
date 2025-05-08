@@ -198,13 +198,13 @@ export default function EnquiryForm2({ innerRef }) {
 
   return (
     <div ref={innerRef} className="max-w-7xl mx-auto px-4 py-14">
-      <h2 className="text-3xl font-bold mb-6">APPLICATION FORM:</h2>
+      <h2 className="text-3xl font-bold mb-6">ENQUIRY FORM:</h2>
       <form className="space-y-6" onSubmit={handleSubmit}>
         {/* Row 1 */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 ">
           <CustomSelect
-            label="NAME"
-            options={["Mr.", "Ms.", "Mrs."]}
+            label="TITLE"
+            options={["Mr.", "Ms.", "Other"]}
             onChange={(val) => setFormData({ ...formData, title: val })}
             value={formData.title}
             error={formErrors.title}
@@ -253,18 +253,24 @@ export default function EnquiryForm2({ innerRef }) {
               <p className="text-red-600 text-sm">{formErrors.lastName}</p>
             )}
           </div>
-          <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-4 gap-2 ">
+
+          <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-4 gap-2">
+            <div className="col-span-4">
+              <label className="text-base font-bold block">
+                Date of Birth
+              </label>
+            </div>
             {["dobDay", "dobMonth", "dobYear"].map((key, i) => (
               <div key={key}>
-                <label className="text-sm font-semibold mb-1 block">
-                  {["DD", "MM", "YYYY"][i]}
+                <label className="text-sm font-semibold  block">
+                  {["", "", ""][i]}
                 </label>
                 <select
                   className={`w-full border ${
                     formErrors[key]
                       ? "border-red-500"
                       : "border-dashed border-[#A9B8D5] focus:outline-none"
-                  } p-2`}
+                  } py-2 -mt-2`}
                   value={formData[key]}
                   onChange={(e) =>
                     setFormData({ ...formData, [key]: e.target.value })
@@ -316,10 +322,7 @@ export default function EnquiryForm2({ innerRef }) {
                   <p className="text-red-600 text-sm">{formErrors[key]}</p>
                 )}
               </div>
-            ))}{" "}
-            {/* <div className="flex items-center justify-center pt-4 text-[#002561]">
-            Required)  (
-            </div> */}
+            ))}
           </div>
         </div>
 
@@ -445,7 +448,7 @@ export default function EnquiryForm2({ innerRef }) {
           <button
             type="submit"
             disabled={submitting}
-            className="relative text-white font-bold px-5 py-2 w-44 bg-[#0072C5] transition-all cursor-pointer group hover:shadow-inner border-dashed"
+            className="relative text-white  px-5 py-1 font-thin leading-relaxed text-[20px] w-44 bg-[#0072C5] transition-all cursor-pointer group hover:shadow-inner border-dashed"
           >
             {submitting ? "Submitting..." : "Submit"}
             <span className="absolute top-0 right-0 w-0 h-0 border-solid border-transparent group-hover:border-r-[15px] group-hover:border-b-[15px] transition-all duration-75 ease-out border-r-white border-b-[#2050B1]"></span>
