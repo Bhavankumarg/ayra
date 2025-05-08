@@ -3,6 +3,8 @@ import Image from 'next/image';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import AOS from "aos"
+import "aos/dist/aos.css"
 
 const SlidingContent = () => {
   const sliderRef = useRef(null); // Create a reference to the slider
@@ -23,6 +25,12 @@ const SlidingContent = () => {
       image: '/Home-imges/Home-text-03.png',
     },
   ];
+    useEffect(() => {
+      AOS.init({
+        duration: 1000,
+        once: true,
+      })
+    }, [])
 
   const settings = {
     dots: true,
@@ -41,11 +49,12 @@ const SlidingContent = () => {
     <div className="bg-blue-950 flex flex-col items-center justify-center text-center lg:py-24 py-10 px-4 lg:px-1 overflow-hidden">
       <div className="container mx-auto">
         {/* Static Image */}
-        <div className="flex items-center justify-center mb-10">
+        <div className="flex items-center justify-center mb-10 ">
           <Image
             src="/Home-imges/Home-text-03.png"
             alt="The Future of Learning is Unfolding"
             className="w-full lg:h-[70vh] object-contain p-5"
+            data-aos="zoom-in" 
             width={1384}
             height={884}
           />

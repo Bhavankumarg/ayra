@@ -77,11 +77,10 @@ const FadeComponent = () => {
       className="w-full h-[40vh] object-contain p-5"
       width={1384}
       height={884}
-      data-aos="zoom-in" // Changed here
+      data-aos="zoom-out" // 👈 AOS animation added here
     />
   </div>
 </div>
-
 
       {/* SLIDER SECTION */}
       <SliderComponent />
@@ -91,7 +90,7 @@ const FadeComponent = () => {
         ref={outerRef}
         className="relative w-full bg-[#E2E2EB] overflow-hidden py-14"
       >
-        <div className="flex items-center justify-center h-full container mx-auto">
+        <div className="flex items-center justify-center h-full container mx-auto ">
           <Image
             src="/Home-imges/Home-text-04.png"
             alt="The Future of Learning is Unfolding"
