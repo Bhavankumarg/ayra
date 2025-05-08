@@ -317,9 +317,9 @@ export default function EnquiryForm2({ innerRef }) {
                 )}
               </div>
             ))}{" "}
-            <div className="flex items-center justify-center pt-4 text-[#002561]">
-              (Required)
-            </div>
+            {/* <div className="flex items-center justify-center pt-4 text-[#002561]">
+            Required)  (
+            </div> */}
           </div>
         </div>
 
@@ -435,7 +435,7 @@ export default function EnquiryForm2({ innerRef }) {
               "Engineering & Technology",
             ]}
             onChange={(val) => setFormData({ ...formData, interest: val })}
-            value={formData.interest || "interest You Are Applying For"}
+            value={formData.interest || ""}
             error={formErrors.interest}
           />
         </div>
@@ -445,7 +445,7 @@ export default function EnquiryForm2({ innerRef }) {
           <button
             type="submit"
             disabled={submitting}
-            className="relative text-white font-bold px-5 py-1 w-60 bg-[#0072C5] transition-all cursor-pointer group hover:shadow-inner border-dashed"
+            className="relative text-white font-bold px-5 py-2 w-44 bg-[#0072C5] transition-all cursor-pointer group hover:shadow-inner border-dashed"
           >
             {submitting ? "Submitting..." : "Submit"}
             <span className="absolute top-0 right-0 w-0 h-0 border-solid border-transparent group-hover:border-r-[15px] group-hover:border-b-[15px] transition-all duration-75 ease-out border-r-white border-b-[#2050B1]"></span>

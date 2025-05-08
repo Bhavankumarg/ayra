@@ -19,10 +19,10 @@ const Page = () => {
       <Header scrollToFooter={scrollToFooter} />
 
       {/* SECTION 1 */}
-      <div className="relative lg:h-screen w-full bg-[#0052B8] overflow-hidden pt-10 lg:pt-5">
+      <div className="relative lg:h-screen w-full bg-[#172554] overflow-hidden pt-10 lg:pt-5">
         <div className="flex items-center justify-center h-full container mx-auto animate-fadeIn">
           <Image
-            src="/Home-imges/Home-text-01.png"
+            src="/Home-imges/bg-ayar-image.png"
             alt="The Future of Learning is Unfolding"
             className="w-full h-[70vh] object-contain p-5"
             width={1384}

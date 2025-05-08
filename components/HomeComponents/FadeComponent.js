@@ -41,7 +41,7 @@ const FadeComponent = () => {
       {/* SECTION 1 */}
       <div
         className="flex items-center justify-center lg:h-80 h-[200px] px-1 bg-white relative overflow-hidden bg-cover bg-center"
-        style={{ backgroundImage: "url('/Home-imges/bg-image-home.png')" }}
+     
       >
         <h1
           key={index}
@@ -54,13 +54,13 @@ const FadeComponent = () => {
       </div>
 
       {/* SECTION 3 */}
-      <div className="w-full lg:h-[45vh] bg-[#0052B8] text-white flex items-center justify-center">
+      <div className="w-full lg:h-[45vh] bg-[#172554] text-white flex items-center justify-center">
         <div className="container mx-auto lg:px-6 px-4 py-14" data-aos="zoom-in">
           <div className="flex flex-col items-center text-center space-y-5">
             <p className="text-[24px] lg:text-[40px] font-thin leading-relaxed">
               At AYRA, these answers aren't given to you—you create them.
             </p>
-            <p className="text-[24px] lg:text-[40px] font-thin leading-relaxed">
+            <p className="text-[24px] lg:text-[40px] font-thin leading-normal">
               A place where your education is an open canvas, your ambitions
               define your path, and your potential unfolds on your own terms.
             </p>

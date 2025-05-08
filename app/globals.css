@@ -28,3 +28,13 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+.slick-dots li button:before {
+  font-size: 10px !important;
+  color: white !important;
+}
+
+.slick-dots li.slick-active button:before {
+  color: white !important;
+  opacity: 1 !important;
+}
