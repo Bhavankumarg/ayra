@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{}"
+self.__REACT_LOADABLE_MANIFEST='{"app/page.js -> @/components/HomeComponents/EnquiryForm2":{"id":4966,"files":["static/chunks/966.61ae8a21b1040937.js"]},"app/page.js -> @/components/HomeComponents/FadeComponent":{"id":370,"files":["static/css/d829c41e8156d33a.css","static/chunks/379.dfe79eb4f6521bea.js","static/chunks/370.0d41687589cc7867.js"]}}';

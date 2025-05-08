@@ -1,18 +1,25 @@
-"use client"
-import React, { useRef } from "react"
-import Image from "next/image"
-import { HiChevronDown } from "react-icons/hi"
-import FadeComponent from "@/components/HomeComponents/FadeComponent"
-import FormComponent from "@/components/HomeComponents/FormComponent"
-import Header from "@/components/shared/Header"
-import EnquiryForm2 from "@/components/HomeComponents/EnquiryForm2"
-import Footer from "@/components/shared/Footer/Footer"
+"use client";
+import React, { useRef, useEffect, useState } from "react";
+import dynamic from "next/dynamic";
+import Image from "next/image";
+import { HiChevronDown } from "react-icons/hi";
+
+// Dynamically load components that may use `window`
+const FadeComponent = dynamic(() => import("@/components/HomeComponents/FadeComponent"), { ssr: false });
+const EnquiryForm2 = dynamic(() => import("@/components/HomeComponents/EnquiryForm2"), { ssr: true });
+// const FormComponent = dynamic(() => import("@/components/HomeComponents/FormComponent"), { ssr: false });
+
+import Header from "@/components/shared/Header";
+import Footer from "@/components/shared/Footer/Footer";
+
 const Page = () => {
-  const footerRef = useRef(null)
+  const footerRef = useRef(null);
 
   const scrollToFooter = () => {
-    footerRef.current?.scrollIntoView({ behavior: "smooth" })
-  }
+    if (typeof window !== "undefined" && footerRef.current) {
+      footerRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <>
@@ -33,7 +40,7 @@ const Page = () => {
         {/* Scroll Arrow */}
         <div className="absolute inset-0 flex items-end justify-center">
           <div className="mb-5 animate-bounce">
-            <HiChevronDown className="w-10 h-10 text-[#4EA6FF] " />
+            <HiChevronDown className="w-10 h-10 text-[#4EA6FF]" />
           </div>
         </div>
       </div>
@@ -41,12 +48,11 @@ const Page = () => {
       <FadeComponent />
 
       {/* Target Section */}
-
       <EnquiryForm2 innerRef={footerRef} />
       {/* <FormComponent innerRef={footerRef} /> */}
-      <Footer/>
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;
