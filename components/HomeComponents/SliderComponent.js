@@ -38,11 +38,11 @@ const SlidingContent = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true, // Enable auto-scroll
-    autoplaySpeed: 3000, // Set speed for auto-scroll (2 seconds)
-    arrows: false, // Remove default arrows
-    fade: false, // Horizontal scrolling (not fade)
-    rtl: false, // Left-to-right scrolling (opposite of RTL)
+    autoplay: true, 
+    autoplaySpeed: 3000, 
+    arrows: false, 
+    fade: false, 
+    rtl: false, 
   };
 
   return (
@@ -66,10 +66,10 @@ const SlidingContent = () => {
             <div key={index} className="text-white flex flex-col gap-20">
               {/* Text Block */}
               <div className="flex flex-col items-center justify-center">
-                <h2 className="text-3xl md:text-[48px] font-bold mb-4">
+                <h2 className="text-3xl md:text-[48px] font-bold mb-8">
                   {slide.title}
                 </h2>
-                <p className="text-xl md:text-[40px] font-thin tracking-wide">
+                <p className="text-xl md:text-[40px] font-thin tracking-wide mb-10">
                   {slide.description}
                 </p>
               </div>

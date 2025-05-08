@@ -197,7 +197,7 @@ export default function EnquiryForm2({ innerRef }) {
   }
 
   return (
-    <div ref={innerRef} className="max-w-7xl mx-auto px-4 py-8">
+    <div ref={innerRef} className="max-w-7xl mx-auto px-4 py-14">
       <h2 className="text-3xl font-bold mb-6">APPLICATION FORM:</h2>
       <form className="space-y-6" onSubmit={handleSubmit}>
         {/* Row 1 */}

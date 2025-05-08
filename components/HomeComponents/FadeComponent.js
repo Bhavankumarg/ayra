@@ -55,7 +55,7 @@ const FadeComponent = () => {
 
       {/* SECTION 3 */}
       <div className="w-full lg:h-[45vh] bg-[#0052B8] text-white flex items-center justify-center">
-        <div className="container mx-auto lg:px-6 px-4 py-8" data-aos="zoom-in">
+        <div className="container mx-auto lg:px-6 px-4 py-14" data-aos="zoom-in">
           <div className="flex flex-col items-center text-center space-y-5">
             <p className="text-[24px] lg:text-[40px] font-thin leading-relaxed">
               At AYRA, these answers aren't given to you—you create them.
