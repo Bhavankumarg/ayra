@@ -256,8 +256,8 @@ export default function EnquiryForm2({ innerRef }) {
 
           <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-4 gap-2">
             <div className="col-span-4">
-              <label className="text-base font-bold block">
-                Date of Birth
+              <label className="text-[14px] font-bold block mb-1">
+               DATE OF BIRTH
               </label>
             </div>
             {["dobDay", "dobMonth", "dobYear"].map((key, i) => (
