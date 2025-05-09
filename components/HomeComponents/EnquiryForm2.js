@@ -190,7 +190,7 @@ export default function EnquiryForm2({ innerRef }) {
 
     try {
       const res = await fetch(
-        "https://beta.upfront.global/wp-json/contact-form-7/v1/contact-forms/980/feedback",
+        "https://docs.ivistaz.com/wp-json/contact-form-7/v1/contact-forms/890/feedback",
         {
           method: "POST",
           body: form,
