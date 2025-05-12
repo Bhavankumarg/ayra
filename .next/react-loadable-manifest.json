@@ -2,7 +2,8 @@
   "app/page.js -> @/components/HomeComponents/EnquiryForm2": {
     "id": 4966,
     "files": [
-      "static/chunks/966.cc077b9ed0817b89.js"
+      "static/chunks/5e22fd23.c7bf51d00b342f5e.js",
+      "static/chunks/966.5612df7aaf2ef12b.js"
     ]
   },
   "app/page.js -> @/components/HomeComponents/FadeComponent": {

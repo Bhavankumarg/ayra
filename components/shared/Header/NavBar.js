@@ -10,7 +10,7 @@ const NavBar = ({ scrollToFooter }) => {
         <div className="flex items-center px-1 ">
           <Link href="/" onClick={() => window.scrollTo(0, 0)}>
             <Image
-              src="/ayra-logo.svg"
+              src="/arya-logo-2.svg"
               className="h-20  lg:h-20"
               alt="AYRA Logo"
               width={150}

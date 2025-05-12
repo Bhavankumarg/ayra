@@ -1,75 +1,73 @@
-"use client"
-import { useEffect, useRef, useState } from "react"
-import { ChevronDown, Check } from "lucide-react"
-import Image from "next/image"
+"use client";
+import { useEffect, useRef, useState } from "react";
+import { ChevronDown, Check } from "lucide-react";
+import Image from "next/image";
+import { IoMdClose } from "react-icons/io";
 
 const CustomSelect = ({ label, options, onChange, value, error, innerRef }) => {
-  const [isOpen, setIsOpen] = useState(false)
-  const dropdownRef = useRef(null)
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target)
-      ) {
-        setIsOpen(false)
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
       }
-    }
+    };
 
-    document.addEventListener("mousedown", handleClickOutside)
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside)
-    }
-  }, [])
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <div ref={innerRef}>
-    <div className="relative w-full" ref={dropdownRef}>
-      <label className="text-sm font-semibold mb-1 block">{label}</label>
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        type="button"
-        className={`w-full bg-[#fff] px-4 py-2 text-left flex justify-between items-center border ${
-          error
-            ? "border-red-500"
-            : "border-dashed border-[#A9B8D5] focus:outline-none"
-        }`}
-      >
-        <span className={`text-[#002561] ${!value && "text-[#002561]"}`}>
-          {value || "Select"}
-        </span>
-        <Image
-          alt="down-arrow"
-          src="/down-arrow.svg"
-          width={18}
-          height={18}
-          className={`ml-2 transition-transform text-[#2050B1] ${
-            isOpen ? "rotate-180" : ""
+      <div className="relative w-full" ref={dropdownRef}>
+        <label className="text-sm font-semibold mb-1 block">{label}</label>
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          type="button"
+          className={`w-full bg-[#fff] px-4 py-2 text-left flex justify-between items-center border ${
+            error
+              ? "border-red-500"
+              : "border-dashed border-[#A9B8D5] focus:outline-none"
           }`}
-        />
-      </button>
-      {isOpen && (
-        <ul className="absolute left-0 right-0 text-[#3B76CB] w-full lg:w-1/2 bg-[#fff] shadow transition-all duration-300 ease-in-out overflow-hidden z-50 max-h-60 opacity-100">
-          {options.map((opt) => (
-            <li
-              key={opt}
-              className="px-4 hover:text-black cursor-pointer text-[#3B76CB] py-1"
-              onClick={() => {
-                onChange(opt)
-                setIsOpen(false)
-              }}
-            >
-              {opt}
-            </li>
-          ))}
-        </ul>
-      )}
-      {error && <p className="text-red-600 text-sm mt-1">{error}</p>}
+        >
+          <span className={`text-[#002561] ${!value && "text-[#002561]"}`}>
+            {value || "Select"}
+          </span>
+          <Image
+            alt="down-arrow"
+            src="/down-arrow.svg"
+            width={18}
+            height={18}
+            className={`ml-2 transition-transform text-[#2050B1] ${
+              isOpen ? "rotate-180" : ""
+            }`}
+          />
+        </button>
+        {isOpen && (
+          <ul className="absolute left-0 right-0 text-[#3B76CB] w-full lg:w-1/2 bg-[#fff] shadow transition-all duration-300 ease-in-out overflow-hidden z-50 max-h-60 opacity-100">
+            {options.map((opt) => (
+              <li
+                key={opt}
+                className="px-4 hover:text-black cursor-pointer text-[#3B76CB] py-1"
+                onClick={() => {
+                  onChange(opt);
+                  setIsOpen(false);
+                }}
+              >
+                {opt}
+              </li>
+            ))}
+          </ul>
+        )}
+        {error && <p className="text-red-600 text-sm mt-1">{error}</p>}
       </div>
-       </div>
-  )
-}
+    </div>
+  );
+};
 
 export default function EnquiryForm2({ innerRef }) {
   const initialState = {
@@ -86,107 +84,111 @@ export default function EnquiryForm2({ innerRef }) {
     city: "",
     state: "",
     interest: "",
-  }
+  };
 
-  const [formData, setFormData] = useState(initialState)
-  const [formErrors, setFormErrors] = useState({})
-  const [submitting, setSubmitting] = useState(false)
-  const [responseMsg, setResponseMsg] = useState("")
-  console.log("Form Data:", formData)
+  const [formData, setFormData] = useState(initialState);
+  const [formErrors, setFormErrors] = useState({});
+  const [submitting, setSubmitting] = useState(false);
+  const [responseMsg, setResponseMsg] = useState("");
+  console.log("Form Data:", formData);
   const validate = () => {
-    const errors = {}
+    const errors = {};
 
     // Validate title
     if (!formData.title) {
-      errors.title = "Please select a title (e.g., Mr., Ms., Mrs.)."
+      errors.title = "Please select a title (e.g., Mr., Ms., Mrs.).";
     }
 
     // Validate first name
     if (!formData.firstName) {
-      errors.firstName = "First name is required."
+      errors.firstName = "First name is required.";
     } else if (formData.firstName.length < 2) {
-      errors.firstName = "First name must be at least 2 characters long."
+      errors.firstName = "First name must be at least 2 characters long.";
     }
 
     // Validate last name
     if (!formData.lastName) {
-      errors.lastName = "Last name is required."
+      errors.lastName = "Last name is required.";
     } else if (formData.lastName.length < 2) {
-      errors.lastName = "Last name must be at least 2 characters long."
+      errors.lastName = "Last name must be at least 2 characters long.";
     }
 
     // Validate date of birth
-    if (!formData.dobDay || !formData.dobMonth || !formData.dobYear) {
-      errors.dob = "Please select a valid date of birth."
-    } else {
-      const dob = new Date(
-        `${formData.dobYear}-${formData.dobMonth}-${formData.dobDay}`
-      )
-      const today = new Date()
-      if (dob > today) {
-        errors.dob = "Date of birth cannot be in the future."
-      }
-      if (dob.getFullYear() < today.getFullYear() - 100) {
-        errors.dob = "Date of birth cannot be more than 100 years ago."
-      }
+  if (!formData.dobDay || !formData.dobMonth || !formData.dobYear) {
+    errors.dob = "Please select a valid date of birth.";
+  } else {
+    const dob = new Date(
+      `${formData.dobYear}-${formData.dobMonth}-${formData.dobDay}`
+    );
+    const today = new Date();
+    const minAgeDate = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate());
+
+    if (dob > today) {
+      errors.dob = "Date of birth cannot be in the future.";
+    } else if (dob > minAgeDate) {
+      errors.dob = "You must be at least 18 years old.";
+    } else if (dob.getFullYear() < today.getFullYear() - 100) {
+      errors.dob = "Date of birth cannot be more than 100 years ago.";
     }
+  }
+
 
     // Validate gender
     if (!formData.gender) {
-      errors.gender = "Please select your gender."
+      errors.gender = "Please select your gender.";
     }
 
     // Validate nationality
     if (!formData.nationality) {
-      errors.nationality = "Please select your nationality."
+      errors.nationality = "Please select your nationality.";
     }
 
     // Validate email
     if (!formData.email) {
-      errors.email = "Email address is required."
+      errors.email = "Email address is required.";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      errors.email = "Please enter a valid email address."
+      errors.email = "Please enter a valid email address.";
     }
 
     // Validate phone number
     if (!formData.phone) {
-      errors.phone = "Phone number is required."
+      errors.phone = "Phone number is required.";
     } else if (!/^\d{10}$/.test(formData.phone)) {
-      errors.phone = "Phone number must be exactly 10 digits."
+      errors.phone = "Phone number must be exactly 10 digits.";
     }
 
     // Validate city
     if (!formData.city) {
-      errors.city = "City is required."
+      errors.city = "City is required.";
     } else if (formData.city.length < 3) {
-      errors.city = "City name must be at least 3 characters long."
+      errors.city = "City name must be at least 3 characters long.";
     }
 
     // Validate state
     if (!formData.state) {
-      errors.state = "State is required."
+      errors.state = "State is required.";
     } else if (formData.state.length < 3) {
-      errors.state = "State name must be at least 3 characters long."
+      errors.state = "State name must be at least 3 characters long.";
     }
 
     // Validate interest
     if (!formData.interest) {
-      errors.interest = "Please select the interest you are applying for."
+      errors.interest = "Please select the interest you are applying for.";
     }
-    setFormErrors(errors)
-    return Object.keys(errors).length === 0 // Return true if no errors
-  }
+    setFormErrors(errors);
+    return Object.keys(errors).length === 0; // Return true if no errors
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    if (!validate()) return
+    e.preventDefault();
+    if (!validate()) return;
 
-    setSubmitting(true)
+    setSubmitting(true);
 
-    const form = new FormData()
+    const form = new FormData();
     Object.keys(formData).forEach((key) => {
-      form.append(key, formData[key])
-    })
+      form.append(key, formData[key]);
+    });
 
     try {
       const res = await fetch(
@@ -198,22 +200,24 @@ export default function EnquiryForm2({ innerRef }) {
             Accept: "application/json",
           },
         }
-      )
+      );
 
-      const result = await res.json()
+      const result = await res.json();
       if (result.status === "mail_sent") {
-        setResponseMsg("✅ Application submitted successfully!")
-        setFormData(initialState)
-        setFormErrors({})
+        setResponseMsg(
+          "Thank you for reaching out to us. Your form has been successfully submitted. We’ll be in touch with you shortly with the next steps."
+        );
+        setFormData(initialState);
+        setFormErrors({});
       } else {
-        setResponseMsg("❌ Submission failed. Please try again.")
+        setResponseMsg("❌ Submission failed. Please try again.");
       }
     } catch (error) {
-      setResponseMsg("❌ Error submitting the form.")
+      setResponseMsg("❌ Error submitting the form.");
     } finally {
-      setSubmitting(false)
+      setSubmitting(false);
     }
-  }
+  };
 
   return (
     <div ref={innerRef} className="max-w-7xl mx-auto px-4 py-14">
@@ -242,9 +246,9 @@ export default function EnquiryForm2({ innerRef }) {
               } p-2`}
               value={formData.firstName}
               onChange={(e) => {
-                setFormData({ ...formData, firstName: e.target.value })
+                setFormData({ ...formData, firstName: e.target.value });
                 if (formErrors.firstName) {
-                  setFormErrors({ ...formErrors, firstName: undefined })
+                  setFormErrors({ ...formErrors, firstName: undefined });
                 }
               }}
             />
@@ -276,7 +280,7 @@ export default function EnquiryForm2({ innerRef }) {
           <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-4 gap-2">
             <div className="col-span-4">
               <label className="text-[14px] font-bold block mb-1">
-               DATE OF BIRTH
+                DATE OF BIRTH
               </label>
             </div>
             {["dobDay", "dobMonth", "dobYear"].map((key, i) => (
@@ -475,10 +479,33 @@ export default function EnquiryForm2({ innerRef }) {
         </div>
 
         {/* Response Message */}
-        {responseMsg && (
-          <p className="text-sm font-semibold text-blue-600">{responseMsg}</p>
+        {submitting === false && responseMsg && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 transition-opacity duration-300 ease-in-out">
+            <div className="bg-[#172554] rounded-xl p-4 max-w-sm w-full shadow-xl transform transition-all duration-300 scale-100">
+              <button
+                className="fixed top-4 right-4 rounded-full p-1 w-8 h-8 bg-[#fff] text-black hover:bg-gray-400 transition"
+                onClick={() => setResponseMsg("")}
+              >
+                <IoMdClose size={24} />
+              </button>
+              <div className="flex justify-center">
+                <Image
+                  src="/arya-logo-2.svg"
+                  className="h-20  lg:h-20"
+                  alt="AYRA Logo"
+                  width={150}
+                  height={45}
+                  priority
+                />
+              </div>
+
+              <p className="text-center text-lg font-semibold text-white pb-7 pt-3">
+                {responseMsg}
+              </p>
+            </div>
+          </div>
         )}
       </form>
     </div>
-  )
+  );
 }

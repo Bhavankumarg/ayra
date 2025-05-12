@@ -43,7 +43,7 @@ export default function Footer() {
 
         {/* Logo */}
         <div className="mb-4 md:mb-0">
-          <Image src="/ayra-logo.svg" alt="AYRA Logo" width={120} height={40} />
+          <Image src="/arya-logo-2.svg" alt="AYRA Logo" width={120} height={40} />
         </div>
 
         {/* Terms and Privacy */}
