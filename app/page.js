@@ -3,7 +3,7 @@ import React, { useRef, useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { HiChevronDown } from "react-icons/hi";
-
+import SecondSection from "@/components/HomeComponents/SecondSection";
 // Dynamically load components that may use `window`
 const FadeComponent = dynamic(() => import("@/components/HomeComponents/FadeComponent"), { ssr: false });
 const EnquiryForm2 = dynamic(() => import("@/components/HomeComponents/EnquiryForm2"), { ssr: true });
@@ -44,7 +44,7 @@ const Page = () => {
           </div>
         </div>
       </div>
-
+<SecondSection />
       <FadeComponent />
 
       {/* Target Section */}
