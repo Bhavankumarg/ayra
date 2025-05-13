@@ -15,30 +15,30 @@ export default function Footer() {
       <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
         {/* Social Icons */}
         <div className="flex space-x-4 mb-4 md:mb-0">
-          <a
-            href="#"
+          <div
+            href=""
             className="bg-white p-2 rounded text-black hover:opacity-80"
           >
             <FaLinkedin className="w-5 h-5" />
-          </a>
-          <a
-            href="#"
+          </div>
+          <div
+            href=""
             className="bg-white p-2 rounded text-black hover:opacity-80"
           >
             <FaInstagram className="w-5 h-5" />
-          </a>
-          <a
-            href="#"
+          </div>
+          <div
+            href=""
             className="bg-white p-2 rounded text-black hover:opacity-80"
           >
             <FaFacebookF className="w-5 h-5" />
-          </a>
-          <a
-            href="#"
+          </div>
+          <div
+            href=""
             className="bg-white p-2 rounded text-black hover:opacity-80"
           >
             <FaXTwitter className="w-5 h-5" />
-          </a>
+          </div>
         </div>
 
         {/* Logo */}
@@ -48,13 +48,13 @@ export default function Footer() {
 
         {/* Terms and Privacy */}
         <div className="text-sm space-x-2">
-          <a href="#" className="hover:underline">
+          <span href="" className="hover:underline">
             Terms and Conditions
-          </a>
+          </span>
           <span>|</span>
-          <a href="#" className="hover:underline">
+          <span href="" className="hover:underline">
             Privacy Policy
-          </a>
+          </span>
         </div>
       </div>
     </footer>

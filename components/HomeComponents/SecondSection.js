@@ -22,7 +22,7 @@ const SecondSection = () => {
           </p>
           <p className="text-xl text-[#0052B8] font-bold mb-7">
             We are actively working towards being declared a Deemed-to-be
-            University under Section 3 of the UGC Act, 1956—reinforcing our
+            University under Section 3 of the UGC Act, 1956— <br/>reinforcing our
             commitment to academic excellence, institutional autonomy, and
             national impact.
           </p>
