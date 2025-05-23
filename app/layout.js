@@ -4,6 +4,7 @@ import Header from "../components/shared/Header";
 import Footer from "../components/shared/Footer";
 import Script from "next/script";
 
+
 export const metadata = {
   title: "AYRA – A New Kind of Learning Experience Is Coming Soon",
   description:
