@@ -5,8 +5,14 @@ import Image from "next/image";
 import { HiChevronDown } from "react-icons/hi";
 import SecondSection from "@/components/HomeComponents/SecondSection";
 // Dynamically load components that may use `window`
-const FadeComponent = dynamic(() => import("@/components/HomeComponents/FadeComponent"), { ssr: false });
-const EnquiryForm2 = dynamic(() => import("@/components/HomeComponents/EnquiryForm2"), { ssr: true });
+const FadeComponent = dynamic(
+  () => import("@/components/HomeComponents/FadeComponent"),
+  { ssr: false }
+);
+const EnquiryForm2 = dynamic(
+  () => import("@/components/HomeComponents/EnquiryForm2"),
+  { ssr: true }
+);
 // const FormComponent = dynamic(() => import("@/components/HomeComponents/FormComponent"), { ssr: false });
 
 import Header from "@/components/shared/Header";
@@ -44,7 +50,7 @@ const Page = () => {
           </div>
         </div>
       </div>
-<SecondSection />
+      <SecondSection />
       <FadeComponent />
 
       {/* Target Section */}
