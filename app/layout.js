@@ -8,16 +8,16 @@ export const metadata = {
   title: "AYRA – A New Kind of Learning Experience Is Coming Soon",
   description:
     "AYRA is reimagining higher education with flexible programs, student-led learning, and a campus near Nandi Hills. Unfold your potential—our journey begins soon. Stay tuned for updates and enquiries.",
-  metadataBase: new URL("https://ayra.edu.in"),
+  metadataBase: new URL("https://ayra.education"),
   openGraph: {
     title: "AYRA – A New Kind of Learning Experience Is Coming Soon",
     description:
       "AYRA is reimagining higher education with flexible programs, student-led learning, and a campus near Nandi Hills.",
-    url: "https://ayra.edu.in",
+    url: "https://ayra.education",
     siteName: "AYRA",
     images: [
       {
-        url: "https://ayra.edu.in/og-image.jpg",
+        url: "/Home-imges/bg-ayar-image.png",
         width: 1200,
         height: 630,
         alt: "AYRA - A New Kind of Learning Experience",
@@ -32,7 +32,7 @@ export const metadata = {
     description:
       "AYRA is reimagining higher education with flexible programs, student-led learning, and a campus near Nandi Hills.",
     site: "@ayraedu",
-    images: ["https://ayra.edu.in/og-image.jpg"],
+    images: ["https://ayra.education/bg-ayar-image.png"],
   },
 };
 
@@ -42,6 +42,7 @@ export default function RootLayout({ children }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://ayra.education" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
 
@@ -77,7 +78,7 @@ export default function RootLayout({ children }) {
             "@type": "Organization",
             name: "AYRA",
             url: "https://ayra.education",
-            logo: "https://ayra.education/logo.png",
+            logo: "/Home-imges/bg-ayar-image.png",
             sameAs: ["", "", ""],
             description:
               "AYRA is reimagining higher education with flexible programs and a campus near Nandi Hills.",
