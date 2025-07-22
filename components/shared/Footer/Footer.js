@@ -15,35 +15,44 @@ export default function Footer() {
       <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
         {/* Social Icons */}
         <div className="flex space-x-4 mb-4 md:mb-0">
-          <div
-            href=""
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/company/ayra-social/"
             className="bg-white p-2 rounded text-black hover:opacity-80"
           >
             <FaLinkedin className="w-5 h-5" />
-          </div>
-          <div
-            href=""
+          </a>
+          <a
+            target="_blank"
+            href="https://www.instagram.com/ayra_social/?utm_source=ig_web_button_share_sheet#"
             className="bg-white p-2 rounded text-black hover:opacity-80"
           >
             <FaInstagram className="w-5 h-5" />
-          </div>
-          <div
-            href=""
+          </a>
+          <a
+            target="_blank"
+            href="https://www.facebook.com/people/AYRA/100095178472900/?sk=reels_tab"
             className="bg-white p-2 rounded text-black hover:opacity-80"
           >
             <FaFacebookF className="w-5 h-5" />
-          </div>
-          <div
-            href=""
+          </a>
+          <a
+            target="_blank"
+            href="https://x.com/AYRA_social/status/1947521726394601819"
             className="bg-white p-2 rounded text-black hover:opacity-80"
           >
             <FaXTwitter className="w-5 h-5" />
-          </div>
+          </a>
         </div>
 
         {/* Logo */}
         <div className="mb-4 md:mb-0">
-          <Image src="/arya-logo-2.svg" alt="AYRA Logo" width={120} height={40} />
+          <Image
+            src="/arya-logo-2.svg"
+            alt="AYRA Logo"
+            width={120}
+            height={40}
+          />
         </div>
 
         {/* Terms and Privacy */}

@@ -75,7 +75,7 @@ const FadeComponent = () => {
      >
        <div className="flex flex-col items-center text-center space-y-5">
          <p className="text-[24px] lg:text-[40px] font-thin leading-relaxed">
-           At AYRA, these answers aren't given to you—you create them.
+           At AYRA, these answers aren&apos;t given to you—you create them.
          </p>
          <p className="text-[24px] lg:text-[40px] font-thin leading-normal">
            A place where your education is an open canvas, your ambitions

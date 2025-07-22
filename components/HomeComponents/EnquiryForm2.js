@@ -391,7 +391,7 @@ export default function EnquiryForm2({ innerRef }) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div>
             <label className="text-sm font-semibold mb-1 block">
-              PHONE NUMBER
+              PHONE NUMBER 
             </label>
             <input
               type="text"
